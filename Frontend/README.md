@@ -56,97 +56,232 @@ clone 받은 해당 디렉토리를 본인 github의 `git-practice` 레포지토
 
 1. 터미널에서 `git-test`폴더로 진입해 주세요.
 
-2. node modules를 설치해 주세요
+```
+cd Frontend/git-test/
+```
+
+2. node modules를 설치해 주세요.
 
 ```
 npm install
 ```
 
-3. `npm start`를 입력하시고 정상적으로 작동하는지 확인해 주세요.
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-
-## 2-1. feature/signup
-
-1. main 브랜치에서 `feature/kimcode-signup` 브랜치를 생성해주세요.
-
-2. `feature/kimcode-signup` 브랜치로 이동하여 아래 예시코드와 동일한 내용을 `app.js`에서 작업해주세요.
-
-3. 위 작업이 완료되었으면 해당 브랜치를 `push`하여 `PR (pull request)`을 생성해주세요.  
-   commit message 컨벤션을 따르고 있는지 다시 한번 확인해주세요!
-
-예시 코드)
-
-```javascript
-app.post('/users/signup', async (req, res) => {
-  const { username, email, password } = req.body;
-  return await myDataSource.query(
-    `
-      INSERT INTO
-        users (
-          username,
-          email,
-          password			
-        )
-      VALUES (
-        ?,
-        ?,
-        ?,
-        ?
-      )
-    `,
-    [username, email, password]
-  );
-});
-```
+3.  `npm start`를 입력하시고 정상적으로 작동하는지 확인해 주세요.
 
 <br>
 
-## 2-2. feature/signin
+## 2-2. feature/login
 
-1. main 브랜치로 이동 후 `feature/kimcode-signin` 브랜치를 생성해주세요.
+1. main 브랜치에서 `feature/login` 브랜치를 생성해 주세요.
 
-2. `feature/kimcode-signin` 브랜치로 이동하여 아래 예시코드와 동일한 내용을 `app.js`에서 작업해주세요.
-
-3. 위 작업이 완료되었으면 해당 브랜치를 `push`하여 `PR (pull request)`을 생성해주세요.
-
-4. github 레포지토리로 이동 후 `feature/signup` PR을 main 브랜치로 병합해주세요.
-
-5. `feature/signin` PR로 이동하여 해당 PR을 main 브랜치로 병합해주세요.
-
-6. `conflict` 가 발생하였다면 conflict를 해결 후 main 브랜치로 병합해주세요.
-
-예시 코드)
+2. `Login.js`에 아래의 코드를 입력해 주세요.
 
 ```javascript
-app.post('/users/signin', async (req, res) => {
-  const { email, password } = req.body;
-  const user = await myDataSource.query(
-    `
-    SELECT
-      users.id
-    FROM
-      users
-    WHERE
-      users.email = ?
-   `,
-    [email]
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Login.css';
+
+export default function Login() {
+  const [userInfo, setUserInfo] = useState({ id: '', password: '' });
+  const navigate = useNavigate();
+
+  const getUserInfo = (e) => {
+    const { name, value } = e.target;
+    setUserInfo({ ...userInfo, [name]: value });
+  };
+
+  const isValid = userInfo.id.includes('@') && userInfo.password.length >= 5;
+
+  const goToMain = (e) => {
+    e.preventDefault();
+    navigate('/main');
+  };
+
+  return (
+    <div className="login">
+      <main className="loginContainer">
+        <h1 className="title">Git Test</h1>
+        <form className="loginForm" onSubmit={goToMain}>
+          <input
+            className="userId"
+            name="id"
+            type="text"
+            value={userInfo.id}
+            placeholder="이메일을 입력해 주세요."
+            onChange={getUserInfo}
+          />
+          <input
+            className="userPassword"
+            name="password"
+            type="password"
+            value={userInfo.password}
+            placeholder="비밀번호를 입력해 주세요."
+            onChange={getUserInfo}
+          />
+          <button className="loginButton" type="submit" disabled={!isValid}>
+            로그인
+          </button>
+        </form>
+      </main>
+    </div>
   );
-
-  if (!user) {
-    res.json({ message: 'SIGNUP_REQUIRED' });
-  }
-
-  return res.json({ userId: user.id });
-});
+}
 ```
 
-1. front폴더 진입
-2. CRA 설치
-3.
+3. `Login.css`에 아래의 코드를 입력해 주세요.
+
+```css
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loginContainer {
+  padding: 30px;
+  border: 1px solid gray;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.title {
+  font-size: 40px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0;
+}
+
+.userId,
+.userPassword {
+  width: 280px;
+  margin-bottom: 15px;
+  padding: 15px 0 15px 15px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: #fafafa;
+  outline: none;
+}
+
+.loginButton {
+  padding: 15px 0;
+  background-color: #0095f6;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+  outline: none;
+  cursor: default;
+}
+
+.loginButton:disabled {
+  background-color: lightgray;
+}
+```
+
+4. `npm start` 입력 후 아래와 같은 화면이 브라우저에 나오는지 확인해 주세요.
+
+5. 위 작업이 완료되었으면 해당 브랜치를 `push`하여 `PR (pull request)`을 생성해 주세요.  
+   commit message 컨벤션을 따르고 있는지 다시 한번 확인해주세요!
+
+<br>
+
+## 2-2. feature/main
+
+1. main 브랜치에서 `feature/main` 브랜치를 생성해 주세요.
+
+2. `Main`폴더를 생성해 주시고 폴더 안에 `Main.js`와 `Main.css` 파일을 생성해 주세요.
+
+3. `Main.js`에 아래의 코드를 입력해 주세요.
+
+```javascript
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Main.css';
+
+export default function Main() {
+  return (
+    <main className="main">
+      <h1>Main</h1>
+      <img
+        className="image"
+        src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2525&q=80"
+        alt="메인 이미지"
+      />
+      <Link to="/">
+        <button className="button">이전으로</button>
+      </Link>
+    </main>
+  );
+}
+```
+
+4. `Main.css`에 아래의 코드를 입력해 주세요.
+
+```css
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.image {
+  width: 400px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+
+.button {
+  width: 200px;
+  height: 40px;
+  background-color: #fafafa;
+  border: 1px solid gray;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  border: 1px solid #0095f6;
+  color: #fafafa;
+  background-color: #0095f6;
+}
+```
+
+5. `Router.js`에서 `url` 주소를 `/main`으로 설정하시고 `Main`컴포넌트를 연결해 주세요.
+
+```javascript
+<Route path="/main" element={<Main />} />
+```
+
+6. `npm start` 입력 후 아래와 같은 화면이 브라우저에 나오는지 확인해 주세요.
+
+7. 위 작업이 완료되었으면 해당 브랜치를 `push`하여 `PR (pull request)`을 생성해 주세요.  
+   commit message 컨벤션을 따르고 있는지 다시 한번 확인해주세요!
+
+8. `과제 : PR 2개가 등록 된 브라우저의 화면을 캡쳐하여 구글 클래스룸에 업로드 해주세요.`
+
+<br>
+
+## 2-3. Login PR merge
+
+1. github 레포지토리로 이동 후 `feature/login` PR을 `merge`해 주세요.
+
+2. `과제 : github의 feature/main관련 PR에서 Conflict가 발생한 화면을 캡쳐하여 구글 클래스룸에 업로드 해주세요.`
+
+<br>
+
+## 2-4. Conflict 해결
+
+1. `main` 브랜치에서 `pull`을 실행해 주세요.
+
+2. `feature/main` 브랜치로 이동 후 `merge`를 해주세요.
+
+3. `conflict`가 발생하였다면 `conflict`를 해결해 하시고 `push`해 주세요.
+
+4. `과제 : github에서 feature/main관련 PR에서 Conflict가 해결된 화면을 캡쳐하여 구글 클래스룸에 업로드 해주세요.`
