@@ -52,42 +52,25 @@ clone 받은 해당 디렉토리를 본인 github의 `git-practice` 레포지토
 
 <br>
 
-## 2-1. CRA setting
+## 2-1. Install node modules
 
-1. Create React App(CRA)를 설치해 주세요.
+1. 터미널에서 `git-test`폴더로 진입해 주세요.
 
-```
-npx create-react-app git-test
-```
-
-2. React Router를 설치해 주세요.
+2. node modules를 설치해 주세요
 
 ```
-npm install react-router-dom
+npm install
 ```
 
-3. src 폴더에서 `App.js`와 `index.js`를 제외한 모든 파일을 삭제해 주세요.
-
-4. `Router.js` 파일 생성 후 컴포넌트의 기본 구조를 잡아 주시고 기본 경로를 아래와 같이 설정해 주세요.
-
-```javascript
-// Router.js
-
-<Route path="/" element={<App />} />
-```
-
-5. `index.js`에서 `<App />`컴포넌트 대신 `<Router />` 컴포넌트로 변경해 주세요.
-
-```javascript
-// index.js
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <Router />
-  </React.StrictMode>
-);
-```
+3. `npm start`를 입력하시고 정상적으로 작동하는지 확인해 주세요.
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
 
 ## 2-1. feature/signup
 
