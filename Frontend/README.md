@@ -184,6 +184,9 @@ export default function Login() {
 
 4. `npm start` 입력 후 아래와 같은 화면이 브라우저에 나오는지 확인해 주세요.
 
+![git-test-1](https://user-images.githubusercontent.com/37888503/202239045-2757111e-0ee1-4045-910f-1890b1d0db73.gif)
+
+
 5. 위 작업이 완료되었으면 해당 브랜치를 `push`하여 `PR (pull request)`을 생성해 주세요.  
    commit message 컨벤션을 따르고 있는지 다시 한번 확인해주세요!
 
@@ -206,11 +209,7 @@ export default function Main() {
   return (
     <main className="main">
       <h1>Main</h1>
-      <img
-        className="image"
-        src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2525&q=80"
-        alt="메인 이미지"
-      />
+     <img className="image" src="images/code.avif" alt="메인 이미지" />
       <Link to="/">
         <button className="button">이전으로</button>
       </Link>
@@ -261,10 +260,15 @@ export default function Main() {
 
 6. `npm start` 입력 후 아래와 같은 화면이 브라우저에 나오는지 확인해 주세요.
 
+![git-test-2](https://user-images.githubusercontent.com/37888503/202240758-dffad4ae-aaa3-48d5-af7f-28366dc56181.gif)
+
+
 7. 위 작업이 완료되었으면 해당 브랜치를 `push`하여 `PR (pull request)`을 생성해 주세요.  
    commit message 컨벤션을 따르고 있는지 다시 한번 확인해주세요!
 
-8. `과제 : PR 2개가 등록 된 브라우저의 화면을 캡쳐하여 구글 클래스룸에 업로드 해주세요.`
+8. `과제 : 아래와 같이 PR 2개가 등록 된 브라우저의 화면을 캡쳐하여 구글 클래스룸에 업로드 해주세요.`
+
+<img width="1100" alt="스크린샷 2022-11-15 오후 11 54 43" src="https://user-images.githubusercontent.com/37888503/202240920-5c7a3e7c-d87b-4cf6-8e7d-d83237b516ac.png">
 
 <br>
 
@@ -272,7 +276,9 @@ export default function Main() {
 
 1. github 레포지토리로 이동 후 `feature/login` PR을 `merge`해 주세요.
 
-2. `과제 : github의 feature/main관련 PR에서 Conflict가 발생한 화면을 캡쳐하여 구글 클래스룸에 업로드 해주세요.`
+2. `과제 : 아래와 같이 github의 feature/main관련 PR에서 Conflict가 발생한 화면을 캡쳐하여 구글 클래스룸에 업로드 해주세요.`
+
+<img width="1269" alt="스크린샷 2022-11-15 오후 11 56 47" src="https://user-images.githubusercontent.com/37888503/202240890-eb42a21c-ffb2-4fc1-9bf8-74f0cdcc7cef.png">
 
 <br>
 
@@ -284,4 +290,7 @@ export default function Main() {
 
 3. `conflict`가 발생하였다면 `conflict`를 해결해 하시고 `push`해 주세요.
 
-4. `과제 : github에서 feature/main관련 PR에서 Conflict가 해결된 화면을 캡쳐하여 구글 클래스룸에 업로드 해주세요.`
+4. `과제 : 아래와 같이 github에서 feature/main관련 PR에서 Conflict가 해결된 화면을 캡쳐하여 구글 클래스룸에 업로드 해주세요.`
+
+<img width="1271" alt="스크린샷 2022-11-15 오후 11 59 42" src="https://user-images.githubusercontent.com/37888503/202240997-90c48836-7bcc-4bf7-9237-308f0b4ece65.png">
+
