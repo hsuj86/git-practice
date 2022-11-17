@@ -74,7 +74,17 @@ npm install
 
 1. `Frontend/git-test/` 경로의 `main` 브랜치에서 `feature/login` 브랜치를 생성해 주세요.
 
-2. `Login.js`에 아래의 코드를 입력해 주세요.
+2. `src` 폴더 안에 `pages` 폴더를 생성해 주시고 과제를 진행하기 위한 `Login` 폴더 및 파일들을 생성해 주세요.
+
+```shell
+src
+ └── pages
+       └── Login
+             └── Login.js
+             └── Login.css
+```
+
+3. `Login.js`에 아래의 코드를 입력해 주세요.
 
 ```javascript
 import React, { useState } from 'react';
@@ -128,7 +138,7 @@ export default function Login() {
 }
 ```
 
-3. `Login.css`에 아래의 코드를 입력해 주세요.
+4. `Login.css`에 아래의 코드를 입력해 주세요.
 
 ```css
 .login {
@@ -182,12 +192,11 @@ export default function Login() {
 }
 ```
 
-4. `npm start` 입력 후 아래와 같은 화면이 브라우저에 나오는지 확인해 주세요.
+5. `npm start` 입력 후 아래와 같은 화면이 브라우저에 나오는지 확인해 주세요.
 
 ![git-test-1](https://user-images.githubusercontent.com/37888503/202239045-2757111e-0ee1-4045-910f-1890b1d0db73.gif)
 
-
-5. 위 작업이 완료되었으면 해당 브랜치를 `push`하여 `PR (pull request)`을 생성해 주세요.  
+6. 위 작업이 완료되었으면 해당 브랜치를 `push`하여 `PR (pull request)`을 생성해 주세요.  
    commit message 컨벤션을 따르고 있는지 다시 한번 확인해주세요!
 
 <br>
@@ -195,6 +204,19 @@ export default function Login() {
 ## 2-2. feature/main
 
 1. `Frontend/git-test/` 경로의 `main` 브랜치에서 `feature/main` 브랜치를 생성해 주세요.
+
+2. `pages` 폴더 안에 과제를 진행하기 위한 `Main` 폴더 및 파일들을 생성해 주세요.
+
+```shell
+src
+ └── pages
+       └── Login
+             └── Login.js
+             └── Login.css
+       └── Main
+             └── Main.js
+             └── Main.css
+```
 
 2. `Main`폴더를 생성해 주시고 폴더 안에 `Main.js`와 `Main.css` 파일을 생성해 주세요.
 
@@ -272,7 +294,7 @@ export default function Main() {
 
 <br>
 
-## 2-3. Login PR merge
+## 2-3. merge Login PR
 
 1. github 레포지토리로 이동 후 `feature/login` PR을 `merge`해 주세요.
 
@@ -282,7 +304,7 @@ export default function Main() {
 
 <br>
 
-## 2-4. Conflict 해결
+## 2-4. Resolving conflicts
 
 1. `main` 브랜치에서 `pull`을 실행해 주세요.
 
