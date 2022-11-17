@@ -72,7 +72,7 @@ npm install
 
 ## 2-2. feature/login
 
-1. main 브랜치에서 `feature/login` 브랜치를 생성해 주세요.
+1. `Frontend/git-test/` 경로의 `main` 브랜치에서 `feature/login` 브랜치를 생성해 주세요.
 
 2. `Login.js`에 아래의 코드를 입력해 주세요.
 
@@ -194,7 +194,7 @@ export default function Login() {
 
 ## 2-2. feature/main
 
-1. main 브랜치에서 `feature/main` 브랜치를 생성해 주세요.
+1. `Frontend/git-test/` 경로의 `main` 브랜치에서 `feature/main` 브랜치를 생성해 주세요.
 
 2. `Main`폴더를 생성해 주시고 폴더 안에 `Main.js`와 `Main.css` 파일을 생성해 주세요.
 
